@@ -7,6 +7,7 @@
 - [Adding component ↑](#adding-component-)
 - [Git Hub asociate repository to my Project ↑](#git-hub-asociate-repository-to-my-project-)
 - [Git Hub push changes to repository GitHub ↑](#git-hub-push-changes-to-repository-github-)
+- [Change compact folder configuration in VSC  ↑](#change-compact-folder-configuration-in-vsc--)
 
 # Install Angular [↑](#table-of-contents)
 1. Download and install node.js (Recomended LTS version) + node -v in Terminal
@@ -63,5 +64,7 @@ For call component in HTML file:
 6. **```git commit -m "description commit message"```** (for save SA files in Local Repository → LR)
 7. **```git push```** (for upload files to LR to Remote Repository RR) RR = GitHub Repository
 
+# Change compact folder configuration in VSC  [↑](#table-of-contents)
+1. Go to File > Preferences > Features & Uncheck compact folders
 
 
