@@ -11,12 +11,12 @@
 - [Change compact folder configuration in VSC  ↑](#change-compact-folder-configuration-in-vsc--)
 
 # Install Angular [↑](#table-of-contents)
-1. Download and install node.js (Recomended LTS version) and check **```node -v```** in Terminal
-2. Download and install VSC
-3.  **```npm install -g @angular/cli```** and check **```ng --version ```** in Terminal
+1. Download and install VSC and open terminal in VSC: Terminal > New Terminal or CNTL + Ñ
+2. Download and install node.js (Recomended LTS version) and check **```node -v```** in VSC Terminal
+3. **```npm install -g @angular/cli```** and check **```ng --version ```** in VSC Terminal
 
 # Creating the first angular project [↑](#table-of-contents)
-1. Open terminal in VSC: Terminal > New Terminal or CNTL + Ñ
+1. Open terminal in VSC (Remember Terminal > New Terminal or CNTL + Ñ)
 2. **```ng new```**
 3. What name would you like to use for the application? my-first-app
 4. Would you like to add Angular routing? **```N```** (for the moment)
