@@ -1,27 +1,54 @@
-# WorkspaceAngular
+# Table of Contents:
+- [Table of Contents:](#table-of-contents)
+- [Install Angular](#install-angular)
+- [Create Monorepo Workspace for save multiple projects in Angular {#custom-id}](#create-monorepo-workspace-for-save-multiple-projects-in-angular-custom-id)
+- [Create a component use Angular CLI](#create-a-component-use-angular-cli)
+- [Use a component](#use-a-component)
+- [Git Hub asociate repository to my Project](#git-hub-asociate-repository-to-my-project)
+- [Git Hub push changes on my repository](#git-hub-push-changes-on-my-repository)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
+# Install Angular
+1. Download and install node.js (Recomended LTS version) + node -v in Terminal
+2. Download and install VSC
+3.  ```npm install -g @angular/cli``` and check ng --version 
 
-## Development server
+# Create Monorepo Workspace for save multiple projects in Angular {#custom-id}
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1.  ```ng new workspace-angular --strict --create-application=false ```
+2.  ```cd workspace-angular ``` (change directory)
+3.  ```code . ``` (open the project)
+4. ng generate application app-name (adding apps in the monorepo)
+5. In  ```angular.json ``` file select  ```defaultProject ``` and set default project of list of projects
+6. Run projects:
+    - For run default project: 
+        -  ```ng serve -o ```
+        -  ```npm start ```
+    - For run others projects: 
+        -  ```npm serve nameProject ```
+        -  ```npm start nameProject  ```
+        -  ```npm run start nameProject ```
 
-## Code scaffolding
+# Create a component use Angular CLI
+For create component use:
+1. Complete form:    ```ng generate component name-component ```
+2. Abreviated form:  ```ng g        c         name-component ```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Use a component
+For call component in HTML file:
+1. Go to the selector atribute located in the file ```nameComponent.component.ts``` and copy the value
+2. Paste the selector in other component HTML ```<app-component-name></app-component-name>```
 
-## Build
+# Git Hub asociate repository to my Project
+1. Go to gitHub page and create repository New > write RepositoryName (ex. workspace-angular) and push Create Repository
+2. ```git remote add origin URL``` example https://github.com/yourUserNameGit/yourRepositoryName.git```
+3. ```git branch -M main```
+4. ```git push -u origin main```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+# Git Hub push changes on my repository
+1. make changes in repository
+2. ```git status``` (for see the changes)
+3. ```git add .``` (for add all changes) or ```git add file``` (for add only one file)
+4. ```git status``` (for check adding files to upload to repository)
+5. ```git commit -m "description commit message"```
+6. 
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
