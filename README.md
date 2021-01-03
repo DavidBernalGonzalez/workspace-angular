@@ -1,6 +1,7 @@
 # Table of Contents:
 - [Table of Contents:](#table-of-contents)
 - [Install Angular ↑](#install-angular-)
+- [My first angular project](#my-first-angular-project)
 - [Create Monorepo Workspace for save multiple projects in Angular ↑](#create-monorepo-workspace-for-save-multiple-projects-in-angular-)
 - [Create a component use Angular CLI ↑](#create-a-component-use-angular-cli-)
 - [Adding component ↑](#adding-component-)
@@ -11,6 +12,15 @@
 1. Download and install node.js (Recomended LTS version) + node -v in Terminal
 2. Download and install VSC
 3.  **```npm install -g @angular/cli```** and check ng --version 
+
+# My first angular project
+1. Open terminal in VSC: Terminal > New Terminal or CNTL + Ñ
+2. **```ng new```**
+3. What name would you like to use for the application? my-first-app
+4. Would you like to add Angular routing? **```N```** (for the moment)
+5. Which stylesheet format would you like to use? (Use arrow keys) **```CSS```** (for the moment)
+6. **```cd my-first-app```** (change to the directory of the application)
+7. **```code .```** (open the project)
 
 # Create Monorepo Workspace for save multiple projects in Angular [↑](#table-of-contents)
 
