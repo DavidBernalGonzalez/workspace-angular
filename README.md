@@ -32,17 +32,34 @@
 2. App.module.ts under the decorator **```@NgModule```** call in bootstrap array the  Root Component AppComponent
 3. Components are subdivide in:
     - app.component.ts: Define the JS and call app.component.css and app.component.html templates. IT's the minimun file required for a functional component if declare template and styles (not needed).
+      - Minimun component with '' only one line for template and style
       ``` js
-        import { Component } from '@angular/core';
+      import { Component } from '@angular/core';
 
-        @Component({
-          selector: 'app-root',
-          template: '<h1>Hello World</h1>',
-          style: [ './app.component.css']
-        })
-        export class AppComponent {
-          title = 'my-first-app';
-        } 
+      @Component({
+        selector: 'app-root',
+        template: '<h1>Hello World</h1>',
+        styles: [ ' h1 {color: red} ']
+      })
+      export class AppComponent {
+        title = 'my-first-app';
+      }
+      ```
+      - Minimun component with ` multiline for template and style
+
+      ``` js
+      import { Component } from '@angular/core';
+
+      @Component({
+        selector: 'app-root',
+        template: `<h1>Hello World</h1>
+                   <p>Text</p>`,
+        styles: [ ` h1 {color: red}
+                    p { color: blue } `]
+      })
+      export class AppComponent {
+        title = 'my-first-app';
+      }
       ```
     - If use templateUrl: [] and styleUrls: [] in component needs
 
