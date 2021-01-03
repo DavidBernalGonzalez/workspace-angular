@@ -1,7 +1,8 @@
 # Table of Contents:
 - [Table of Contents:](#table-of-contents)
 - [Install Angular ↑](#install-angular-)
-- [My first angular project](#my-first-angular-project)
+- [Creating the first angular project](#creating-the-first-angular-project)
+- [Flow inside Angular application](#flow-inside-angular-application)
 - [Create Monorepo Workspace for save multiple projects in Angular ↑](#create-monorepo-workspace-for-save-multiple-projects-in-angular-)
 - [Create a component use Angular CLI ↑](#create-a-component-use-angular-cli-)
 - [Adding component ↑](#adding-component-)
@@ -10,11 +11,11 @@
 - [Change compact folder configuration in VSC  ↑](#change-compact-folder-configuration-in-vsc--)
 
 # Install Angular [↑](#table-of-contents)
-1. Download and install node.js (Recomended LTS version) + node -v in Terminal
+1. Download and install node.js (Recomended LTS version) and check **```node -v```** in Terminal
 2. Download and install VSC
-3.  **```npm install -g @angular/cli```** and check ng --version 
+3.  **```npm install -g @angular/cli```** and check **```ng --version ```** in Terminal
 
-# My first angular project
+# Creating the first angular project
 1. Open terminal in VSC: Terminal > New Terminal or CNTL + Ñ
 2. **```ng new```**
 3. What name would you like to use for the application? my-first-app
@@ -22,6 +23,44 @@
 5. Which stylesheet format would you like to use? (Use arrow keys) **```CSS```** (for the moment)
 6. **```cd my-first-app```** (change to the directory of the application)
 7. **```code .```** (open the project)
+8. **```ng serve -o```** (run the application the flag -o open the browser on transpile code to JS)
+9. See default Angular application
+
+# Flow inside Angular application
+1. Main.js in promise **```platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.error(err));```** call the Root module AppModule of my application
+2. App.module.ts under the decorator **```@NgModule```** call in bootstrap array the  Root Component AppComponent
+3. Components are subdivide in:
+    - app.component.ts: Define the JS and call app.component.css and app.component.html templates. IT's the minimun file required for a functional component if declare template and styles (not needed).
+      ``` js
+        import { Component } from '@angular/core';
+
+        @Component({
+          selector: 'app-root',
+          template: '<h1>Hello World</h1>',
+          style: [ './app.component.css']
+        })
+        export class AppComponent {
+          title = 'my-first-app';
+        } 
+      ```
+    - If use templateUrl: [] and styleUrls: [] in component needs
+
+      ``` js
+        import { Component } from '@angular/core';
+
+        @Component({
+          selector: 'app-root',
+          templateUrl: './app.component.html',
+          styleUrls: [ './app.component.css']
+        })
+        export class AppComponent {
+          title = 'my-first-app';
+        } 
+      ```
+      - app.component.css: Define the styles of component
+      - app.component.html: Define the structure of component
+    - app.component.spec.ts: Define test of the component
 
 # Create Monorepo Workspace for save multiple projects in Angular [↑](#table-of-contents)
 
@@ -66,5 +105,3 @@ For call component in HTML file:
 
 # Change compact folder configuration in VSC  [↑](#table-of-contents)
 1. Go to File > Preferences > Features & Uncheck compact folders
-
-
