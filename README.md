@@ -1,8 +1,8 @@
 # Table of Contents:
 - [Table of Contents:](#table-of-contents)
 - [Install Angular ↑](#install-angular-)
-- [Creating the first angular project](#creating-the-first-angular-project)
-- [Flow inside Angular application](#flow-inside-angular-application)
+- [Creating the first angular project ↑](#creating-the-first-angular-project-)
+- [Flow inside Angular application ↑](#flow-inside-angular-application-)
 - [Create Monorepo Workspace for save multiple projects in Angular ↑](#create-monorepo-workspace-for-save-multiple-projects-in-angular-)
 - [Create a component use Angular CLI ↑](#create-a-component-use-angular-cli-)
 - [Adding component ↑](#adding-component-)
@@ -15,7 +15,7 @@
 2. Download and install VSC
 3.  **```npm install -g @angular/cli```** and check **```ng --version ```** in Terminal
 
-# Creating the first angular project
+# Creating the first angular project [↑](#table-of-contents)
 1. Open terminal in VSC: Terminal > New Terminal or CNTL + Ñ
 2. **```ng new```**
 3. What name would you like to use for the application? my-first-app
@@ -26,7 +26,7 @@
 8. **```ng serve -o```** (run the application the flag -o open the browser on transpile code to JS)
 9. See default Angular application
 
-# Flow inside Angular application
+# Flow inside Angular application [↑](#table-of-contents)
 1. Main.js in promise **```platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));```** call the Root module AppModule of my application
 2. App.module.ts under the decorator **```@NgModule```** call in bootstrap array the  Root Component AppComponent
