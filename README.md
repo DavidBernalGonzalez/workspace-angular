@@ -47,9 +47,9 @@ When check ng --version in the terminal. If angular it's install and running cor
       -   11   .  0  .  5  
       -   major.minor.patch
 
-  - major release → Major releases contain significant new features. When you updating to a new major release, you may need to run update scripts, refactor code, run additional tests, and learn new APIs.
-  - minor release → contain new smaller features. Minor releases are fully backward-compatible; no developer assistance is expected during update, but you can optionally modify your apps and libraries to begin using new APIs, features, and capabilities that were added in the release. We update peer dependencies in minor versions by expanding the supported versions, but we do not require projects to update these dependencies.
-  - patch release → resolve bugs fix releases. No developer assistance is expected during update.
+  - **major release** → Major releases contain significant new features. When you updating to a new major release, you may need to run update scripts, refactor code, run additional tests, and learn new APIs.
+  - **minor release** → contain new smaller features. Minor releases are fully backward-compatible; no developer assistance is expected during update, but you can optionally modify your apps and libraries to begin using new APIs, features, and capabilities that were added in the release. We update peer dependencies in minor versions by expanding the supported versions, but we do not require projects to update these dependencies.
+  - **patch release** → resolve bugs fix releases. No developer assistance is expected during update.
 
 In general, you can expect the following release cycle:
 
