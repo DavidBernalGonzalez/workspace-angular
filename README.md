@@ -403,3 +403,8 @@ onInput(event: Event): void{
 }
 ```
 
+Two way binding it's the same of Event Biding + Property Binding
+``` html
+<input [value]="inputData" (input) = "onInput($event)">
+<p>{{inputData}}</p>
+```
