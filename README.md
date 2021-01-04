@@ -32,13 +32,22 @@
 
 ## 1.2 What is the angular version?
 
-Since version 2 of Angular, Angular is spoken of as plain Angular (no version).
-But most developolers speak about Angular with the versión 10, 11... 
+Since version 2 of Angular, Angular is spoken of as plain Angular (no version) because all angular versions are backward compatible.
+However, most developolers speak about Angular with the versión 9, 10, 11... 
 When check ng --version in the terminal. If angular it's install and running correctly, show Angular version (example 11.0.5). This numbers subdivide de version of Angular in three parts, for example:
 
       -   11   .  0  .  5  
       -   major.minor.patch
 
+  - major release → Major releases contain significant new features. When you updating to a new major release, you may need to run update scripts, refactor code, run additional tests, and learn new APIs.
+  - minor release → contain new smaller features. Minor releases are fully backward-compatible; no developer assistance is expected during update, but you can optionally modify your apps and libraries to begin using new APIs, features, and capabilities that were added in the release. We update peer dependencies in minor versions by expanding the supported versions, but we do not require projects to update these dependencies.
+  - patch release → resolve bugs fix releases. No developer assistance is expected during update.
+
+In general, you can expect the following release cycle:
+
+  - A major release every 6 months
+  - 1-3 minor releases for each major release
+  - A patch release and pre-release (next or rc) build almost every week
 
 ## 1.3 Creating the first angular project with Angular CLI [↑](#table-of-contents)
 1. Open terminal in VSC (Remember Terminal > New Terminal or CNTL + Ñ)
