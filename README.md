@@ -19,7 +19,7 @@
   - [2.1 String Interpolation Moustached {{}} (Send data from Model to View) ↑](#21-string-interpolation-moustached--send-data-from-model-to-view-)
   - [2.2 Property Binding [property] (Send data from Model to View) ↑](#22-property-binding-property-send-data-from-model-to-view-)
   - [2.3 Event Binding (Send data from the View to the Model) ↑](#23-event-binding-send-data-from-the-view-to-the-model-)
-  - [2.4 Two way binding ↑](#24-two-way-binding-)
+  - [2.4 Two way binding = Event Binding + Property Binding ↑](#24-two-way-binding--event-binding--property-binding-)
   
 
 
@@ -383,4 +383,23 @@ With $event
   }
   ```
 
-## 2.4 Two way binding [↑](#table-of-contents)
+## 2.4 Two way binding = Event Binding + Property Binding [↑](#table-of-contents)
+In module add:
+1. import { FormsModule } from '@angular/forms';
+2. Adding FormsModule to imports array
+3. Add [(ngModel)]
+``` html
+<input [(ngModel)]="inputData">
+<p>{{inputData}}</p>
+```
+
+And the same code for js:
+
+``` js 
+inputData = '';
+onInput(event: Event): void{
+  this.inputData = ((event.target as HTMLInputElement).value);
+  console.log(this.inputData);
+}
+```
+
