@@ -18,6 +18,7 @@
 - [2. Bindings with Angular ↑](#2-bindings-with-angular-)
   - [2.1 String Interpolation Moustached {{}} (Send data from Model to View) ↑](#21-string-interpolation-moustached--send-data-from-model-to-view-)
   - [2.2 Property Binding [property] (Send data from Model to View) ↑](#22-property-binding-property-send-data-from-model-to-view-)
+  - [2.3 Event Binding](#23-event-binding)
   
 
 
@@ -356,3 +357,4 @@ Other example more dinamic its adding a setTimeOut function change status in 300
     setTimeout(() => (this.isActive = !this.isActive), 3000);
   }
 ```
+## 2.3 Event Binding
