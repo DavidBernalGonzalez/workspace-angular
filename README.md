@@ -16,7 +16,7 @@
   - [1.12 Change compact folder configuration in VSC  ↑](#112-change-compact-folder-configuration-in-vsc--)
   - [1.13 Install Bootstrap ↑](#113-install-bootstrap-)
 - [2. Bindings with Angular ↑](#2-bindings-with-angular-)
-  - [2.1 String Interpolation with Moustached {{}} (Send data from Model to View) ↑](#21-string-interpolation-with-moustached--send-data-from-model-to-view-)
+  - [2.1 String Interpolation Moustached {{}} (Send data from Model to View) ↑](#21-string-interpolation-moustached--send-data-from-model-to-view-)
   
 
 
@@ -290,7 +290,7 @@ For call component in HTML file:
 6. Open the app and check alert (jQuery) appear in the browser and div have a format green
 
 # 2. Bindings with Angular [↑](#table-of-contents)
-## 2.1 String Interpolation with Moustached {{}} (Send data from Model to View) [↑](#table-of-contents)
+## 2.1 String Interpolation Moustached {{}} (Send data from Model to View) [↑](#table-of-contents)
 in the component.ts file add:
 ``` js 
   greeting = 'Hello';
@@ -310,6 +310,10 @@ You need add a getter
 
   getTitle(): string{
     return this.title;
+  }
+  // Set not required for the moment
+  setTitle(title: string): void{
+    this.title = title;
   }
 ```
 And in the component.html file add the getter for print the title:
