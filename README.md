@@ -1,21 +1,46 @@
 # Table of Contents:
 - [Table of Contents:](#table-of-contents)
-- [Install Angular ↑](#install-angular-)
-- [Creating the first angular project ↑](#creating-the-first-angular-project-)
-- [Flow inside Angular application ↑](#flow-inside-angular-application-)
-- [Create Monorepo Workspace for save multiple projects in Angular ↑](#create-monorepo-workspace-for-save-multiple-projects-in-angular-)
-- [Create a component use Angular CLI ↑](#create-a-component-use-angular-cli-)
-- [Adding component ↑](#adding-component-)
-- [Git Hub asociate repository to my Project ↑](#git-hub-asociate-repository-to-my-project-)
-- [Git Hub push changes to repository GitHub ↑](#git-hub-push-changes-to-repository-github-)
-- [Change compact folder configuration in VSC  ↑](#change-compact-folder-configuration-in-vsc--)
+- [1. Starting with Angular ↑](#1-starting-with-angular-)
+  - [1.0 ¿What it's Angular? ↑](#10-what-its-angular-)
+  - [1.1 Install Angular ↑](#11-install-angular-)
+  - [1.2 What is the angular version?](#12-what-is-the-angular-version)
+  - [1.3 Creating the first angular project with Angular CLI ↑](#13-creating-the-first-angular-project-with-angular-cli-)
+  - [1.4 Flow inside Angular application ↑](#14-flow-inside-angular-application-)
+  - [1.5 Components parts: ↑](#15-components-parts-)
+  - [1.6 Create Monorepo Workspace for save multiple projects in Angular ↑](#16-create-monorepo-workspace-for-save-multiple-projects-in-angular-)
+  - [1.7 Create a component use Angular CLI ↑](#17-create-a-component-use-angular-cli-)
+  - [1.8 Adding component ↑](#18-adding-component-)
+  - [1.9 Git Hub asociate repository to my Project ↑](#19-git-hub-asociate-repository-to-my-project-)
+  - [1.10 Git Hub push changes to repository GitHub ↑](#110-git-hub-push-changes-to-repository-github-)
+  - [1.11 Change compact folder configuration in VSC  ↑](#111-change-compact-folder-configuration-in-vsc--)
+  - [1.12 Install Bootstrap ↑](#112-install-bootstrap-)
+  
 
-# Install Angular [↑](#table-of-contents)
+
+# 1. Starting with Angular [↑](#table-of-contents)
+
+## 1.0 ¿What it's Angular? [↑](#table-of-contents)
+    - Created for Google
+    - Framework JS for create SPA (Single Page Applications)
+    - TS (super set JS)
+    - MVC Model View Controler
+
+## 1.1 Install Angular [↑](#table-of-contents)
 1. Download and install VSC and open terminal in VSC: Terminal > New Terminal or CNTL + Ñ
 2. Download and install node.js (Recomended LTS version) and check **```node -v```** in VSC Terminal
-3. **```npm install -g @angular/cli```** and check **```ng --version ```** in VSC Terminal
+3. Install Angular CLI **```npm install -g @angular/cli```** and check **```ng --version ```** in VSC Terminal
 
-# Creating the first angular project [↑](#table-of-contents)
+## 1.2 What is the angular version?
+
+Since version 2 of Angular, Angular is spoken of as plain Angular (no version).
+But most developolers speak about Angular with the versión 10, 11... 
+When check ng --version in the terminal. If angular it's install and running correctly, show Angular version (example 11.0.5). This numbers subdivide de version of Angular in three parts, for example:
+
+      -   11   .  0  .  5  
+      -   major.minor.patch
+
+
+## 1.3 Creating the first angular project with Angular CLI [↑](#table-of-contents)
 1. Open terminal in VSC (Remember Terminal > New Terminal or CNTL + Ñ)
 2. **```ng new```**
 3. What name would you like to use for the application? my-first-app
@@ -26,13 +51,16 @@
 8. **```ng serve -o```** (run the application the flag -o open the browser on transpile code to JS)
 9. See default Angular application
 
-# Flow inside Angular application [↑](#table-of-contents)
+## 1.4 Flow inside Angular application [↑](#table-of-contents)
 1. Main.js in promise **```platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));```** call the Root module AppModule of my application
 2. App.module.ts under the decorator **```@NgModule```** call in bootstrap array the  Root Component AppComponent
-3. Components are subdivide in:
-    - app.component.ts: Define the JS and call app.component.css and app.component.html templates. IT's the minimun file required for a functional component if declare template and styles (not needed).
-      - Minimun component with '' only one line for template and style
+3. bla bla
+
+## 1.5 Components parts: [↑](#table-of-contents)
+Components are subdivide in:
+  - app.component.ts: Define the JS and call app.component.css and app.component.html templates. IT's the minimun file required for a functional component if declare template and styles (not needed).
+    - Minimun component with '' only one line for template and style
       ``` js
       import { Component } from '@angular/core';
 
@@ -45,8 +73,7 @@
         title = 'my-first-app';
       }
       ```
-      - Minimun component with ` multiline for template and style
-
+    - Minimun component with ` multiline for template and style
       ``` js
       import { Component } from '@angular/core';
 
@@ -62,7 +89,6 @@
       }
       ```
     - If use templateUrl: [] and styleUrls: [] in component needs
-
       ``` js
         import { Component } from '@angular/core';
 
@@ -79,7 +105,7 @@
       - app.component.html: Define the structure of component
     - app.component.spec.ts: Define test of the component
 
-# Create Monorepo Workspace for save multiple projects in Angular [↑](#table-of-contents)
+## 1.6 Create Monorepo Workspace for save multiple projects in Angular [↑](#table-of-contents)
 
 1. **```ng new workspace-angular --strict --create-application=false ```**
 2. **```cd workspace-angular ```** (change directory)
@@ -95,23 +121,23 @@
         -  **```npm start nameProject  ```**
         -  **```npm run start nameProject ```**
 
-# Create a component use Angular CLI [↑](#table-of-contents)
+## 1.7 Create a component use Angular CLI [↑](#table-of-contents)
 For create component use:
 1. Complete form:    **```ng generate component name-component ```**
 2. Abreviated form:  **```ng g        c         name-component ```**
 
-# Adding component [↑](#table-of-contents)
+## 1.8 Adding component [↑](#table-of-contents)
 For call component in HTML file:
 1. Go to the selector atribute located in the file **```nameComponent.component.ts```** and copy the value
 2. Paste the selector in other component HTML **```<app-component-name></app-component-name>```**
 
-# Git Hub asociate repository to my Project [↑](#table-of-contents)
+## 1.9 Git Hub asociate repository to my Project [↑](#table-of-contents)
 1. Go to gitHub page and create repository New > write RepositoryName (ex. workspace-angular) and push Create Repository
 2. **```git remote add origin URL```** URL example https://github.com/yourUserNameGit/yourRepositoryName.git
 3. **```git branch -M main```**
 4. **```git push -u origin main```**
 
-# Git Hub push changes to repository GitHub [↑](#table-of-contents)
+## 1.10 Git Hub push changes to repository GitHub [↑](#table-of-contents)
 1. make changes in repository (Working Directory → WD)
 2. **```git status```** (for see the changes in WD)
 3. **```git add .```** (for add all changes of WD to Staging Area → SA) or **```git add file```** (for add only one file of WD to SA)
@@ -120,5 +146,8 @@ For call component in HTML file:
 6. **```git commit -m "description commit message"```** (for save SA files in Local Repository → LR)
 7. **```git push```** (for upload files to LR to Remote Repository RR) RR = GitHub Repository
 
-# Change compact folder configuration in VSC  [↑](#table-of-contents)
+## 1.11 Change compact folder configuration in VSC  [↑](#table-of-contents)
 1. Go to File > Preferences > Features & Uncheck compact folders
+
+## 1.12 Install Bootstrap [↑](#table-of-contents)
+1. npm install bootstrap
