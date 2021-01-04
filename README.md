@@ -320,3 +320,8 @@ And in the component.html file add the getter for print the title:
 ``` html 
   <h1>{{getTitle()}}</h1>
 ```
+
+Under the string interpolation I can make operations for example:
+``` html 
+  <h1>{{1 + 1}}</h1>
+```
