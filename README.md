@@ -20,6 +20,7 @@
   - [2.2 Property Binding [property] (Send data from Model to View) ↑](#22-property-binding-property-send-data-from-model-to-view-)
   - [2.3 Event Binding (Send data from the View to the Model) ↑](#23-event-binding-send-data-from-the-view-to-the-model-)
   - [2.4 Two way binding = Event Binding + Property Binding ↑](#24-two-way-binding--event-binding--property-binding-)
+  - [2.5 Exercise create a calculator ↑](#25-exercise-create-a-calculator-)
   
 
 
@@ -403,8 +404,11 @@ onInput(event: Event): void{
 }
 ```
 
-Two way binding it's the same of Event Biding + Property Binding
+Two way binding it's the same of combination of Event Biding + Property Binding
 ``` html
 <input [value]="inputData" (input) = "onInput($event)">
 <p>{{inputData}}</p>
 ```
+
+## 2.5 Exercise create a calculator [↑](#table-of-contents)
+Create a "calculator" with two inputs fileds add nums when push de button calculate
