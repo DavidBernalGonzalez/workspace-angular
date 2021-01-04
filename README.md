@@ -17,6 +17,7 @@
   - [1.13 Install Bootstrap ↑](#113-install-bootstrap-)
 - [2. Bindings with Angular ↑](#2-bindings-with-angular-)
   - [2.1 String Interpolation Moustached {{}} (Send data from Model to View) ↑](#21-string-interpolation-moustached--send-data-from-model-to-view-)
+  - [2.2 Property Binding [property] (Send data from Model to View) ↑](#22-property-binding-property-send-data-from-model-to-view-)
   
 
 
@@ -325,3 +326,24 @@ Under the string interpolation I can make operations for example:
 ``` html 
   <h1>{{1 + 1}}</h1>
 ```
+
+## 2.2 Property Binding [property] (Send data from Model to View) [↑](#table-of-contents)
+In default HTML disabled button code are:
+``` html 
+  <button class="btn btn-primary" disabled>Add</button>
+```
+If I like controller the disabled property of this button in the template component:
+1. First, I created the property
+``` js 
+  isActive = false;
+```
+2. Second, use the property binding
+``` html 
+  <button class="btn btn-primary" [disabled]="isActive">Add</button>
+```
+3. Check the button (it's disabled)
+4. Change the value of isActive for true
+``` js 
+  isActive = true;
+```
+5. Check the button (it's active)
