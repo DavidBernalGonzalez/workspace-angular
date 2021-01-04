@@ -411,4 +411,55 @@ Two way binding it's the same of combination of Event Biding + Property Binding
 ```
 
 ## 2.5 Exercise create a calculator [↑](#table-of-contents)
-Create a "calculator" with two inputs fileds add nums when push de button calculate
+1. Create a new project
+2. Create a new component (ng g c calculator)
+3. Create a "calculator" under component. With the next requisites:
+   - Two inputs fileds for add numbers (max-legnth 10 characters) and save the inputs values in TS of component
+   - Calcular num1 + num2 and print the result in other input when push de button calculate. The input result only can be readed not writed
+
+>Try first  your before see the solution
+``` html
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <h1>{{title}}</h1>
+        <label for="result">Operation result:</label>
+        <input [value]="result" name="result" readonly="readonly">
+      </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <br>
+        <input type="number" [(ngModel)] = "num1" maxlength="10">
+        <input type="number" [(ngModel)] = "num2" maxlength="10">
+        <button (click)="onClick()">Add</button>
+      </div>
+  </div>
+</div>
+```
+component.ts:
+``` js
+  title = 'Mi calculadora';
+  num1 = 0;
+  num2 = 0;
+  result = 0;
+
+  onClick(): void{
+    this.result = this.num1 + this.num2;
+  }
+```
+4. If the two inputs are in 0 show and alert message: "0 + 0 = 0" (but make the operation)
+>Try first  your before see the solution
+``` js
+  title = 'Mi calculadora';
+  num1 = 0;
+  num2 = 0;
+  result: number | string = '';
+
+  onClick(): void{
+    if (this.num1 === 0 && this.num2 === 0){
+      alert('0 + 0 = 0');
+    }
+    this.result = this.num1 + this.num2;
+  }
+```
