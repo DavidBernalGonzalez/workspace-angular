@@ -61,10 +61,71 @@ In general, you can expect the following release cycle:
 9. See default Angular application
 
 ## 1.4 Flow inside Angular application [↑](#table-of-contents)
-1. Main.js in promise **```platformBrowserDynamic().bootstrapModule(AppModule)
+When angular project it's serve (with ng serve) the flow of a request inside Angular App it's:
+1. Index.html (tradicional HTML but have tag of selector app-root)
+      ``` html
+      <!doctype html>
+      <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <title>MyFirstApp</title>
+        <base href="/">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+      </head>
+      <body>
+        <app-root></app-root>
+      </body>
+      </html>
+      ```
+2. Main.js in promise **```platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));```** call the Root module AppModule of my application
-2. App.module.ts under the decorator **```@NgModule```** call in bootstrap array the  Root Component AppComponent
-3. bla bla
+      ``` js
+      import { enableProdMode } from '@angular/core';
+      import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+      import { AppModule } from './app/app.module';
+      import { environment } from './environments/environment';
+
+      if (environment.production) {
+        enableProdMode();
+      }
+
+      platformBrowserDynamic().bootstrapModule(AppModule)
+        .catch(err => console.error(err));
+      ```
+3. App.module.ts under the decorator **```@NgModule```** call in bootstrap array [] the  Root Component AppComponent set of components that are bootstrapped when this module is bootstrapped
+      ``` js
+      import { BrowserModule } from '@angular/platform-browser';
+      import { NgModule } from '@angular/core';
+
+      import { AppComponent } from './app.component';
+
+      @NgModule({
+        declarations: [
+          AppComponent
+        ],
+        imports: [
+          BrowserModule
+        ],
+        providers: [],
+        bootstrap: [AppComponent]
+      })
+      export class AppModule { }
+      ```
+4. Finally, the component Root App.component.ts run HTML, CSS & TS (transpilate to JS for to be understood with the browser) defines in the app.component.ts. For example:
+      ``` js
+      import { Component } from '@angular/core';
+
+      @Component({
+        selector: 'app-root',
+        templateUrl: './app.component.html',
+        styleUrls: ['./app.component.css']
+      })
+      export class AppComponent {
+        title = 'my-first-app';
+      }
+      ```
 
 ## 1.5 Components parts: [↑](#table-of-contents)
 Components are subdivide in:
