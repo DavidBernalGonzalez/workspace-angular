@@ -335,15 +335,24 @@ In default HTML disabled button code are:
 If I like controller the disabled property of this button in the template component:
 1. First, I created the property
 ``` js 
-  isActive = false;
+  isDisabled = true;
 ```
 2. Second, use the property binding
 ``` html 
-  <button class="btn btn-primary" [disabled]="isActive">Add</button>
+  <button class="btn btn-primary" [disabled]="isDisabled">Add</button>
 ```
 3. Check the button (it's disabled)
 4. Change the value of isActive for true
 ``` js 
-  isActive = true;
+  isDisabled = false;
 ```
 5. Check the button (it's active)
+
+Other example more dinamic its adding a setTimeOut function change status in 3000 miliseconds (3 seconds):
+  ``` js 
+  isActive = false;
+
+  constructor() {
+    setTimeout(() => (this.isActive = !this.isActive), 3000);
+  }
+```
