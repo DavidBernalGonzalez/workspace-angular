@@ -24,6 +24,7 @@
 - [3. Directives Angular](#3-directives-angular)
   - [3.1 *ngIf](#31-ngif)
   - [3.2 Exercice calculator II](#32-exercice-calculator-ii)
+  - [3.3 ngIf & ngElse](#33-ngif--ngelse)
   
 
 
@@ -468,7 +469,7 @@ component.ts:
 ```
 # 3. Directives Angular
 ## 3.1 *ngIf
-ngIf show or hidde the element if true condicion to evaluate it's true. Example:
+ngIf manipulate DOM showed or hidden the element if true condicion to evaluate it's true. Example:
 ``` html
 <div *ngIf="greeting">
   Hello
@@ -521,3 +522,5 @@ In the calculator exercise create a DIV containing the label of the label and th
     this.result = this.num1 + this.num2;
   }
 ```
+## 3.3 ngIf & ngElse
+
