@@ -15,6 +15,8 @@
   - [1.11 Git Hub push changes to repository GitHub ↑](#111-git-hub-push-changes-to-repository-github-)
   - [1.12 Change compact folder configuration in VSC  ↑](#112-change-compact-folder-configuration-in-vsc--)
   - [1.13 Install Bootstrap ↑](#113-install-bootstrap-)
+- [2. Bindings with Angular ↑](#2-bindings-with-angular-)
+  - [2.1 String Interpolation with Moustached {{}} (Send data from Model to View) ↑](#21-string-interpolation-with-moustached--send-data-from-model-to-view-)
   
 
 
@@ -286,3 +288,31 @@ For call component in HTML file:
         </div>
       ```
 6. Open the app and check alert (jQuery) appear in the browser and div have a format green
+
+# 2. Bindings with Angular [↑](#table-of-contents)
+## 2.1 String Interpolation with Moustached {{}} (Send data from Model to View) [↑](#table-of-contents)
+in the component.ts file add:
+``` js 
+  greeting = 'Hello';
+```
+in the component.html file add:
+``` html 
+  <h1>{{greeting}}</h1>
+```
+
+If the var declared private in the component.ts:
+``` js 
+  private greeting = 'Hello';
+```
+You need add a getter
+``` js 
+  private title = 'my-app';
+
+  getTitle(): string{
+    return this.title;
+  }
+```
+And in the component.html file add the getter for print the title:
+``` html 
+  <h1>{{getTitle()}}</h1>
+```
