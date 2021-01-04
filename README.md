@@ -8,12 +8,13 @@
   - [1.4 Flow inside Angular application ↑](#14-flow-inside-angular-application-)
   - [1.5 Components parts: ↑](#15-components-parts-)
   - [1.6 Create Monorepo Workspace for save multiple projects in Angular ↑](#16-create-monorepo-workspace-for-save-multiple-projects-in-angular-)
-  - [1.7 Create a component use Angular CLI ↑](#17-create-a-component-use-angular-cli-)
-  - [1.8 Adding component ↑](#18-adding-component-)
-  - [1.9 Git Hub asociate repository to my Project ↑](#19-git-hub-asociate-repository-to-my-project-)
-  - [1.10 Git Hub push changes to repository GitHub ↑](#110-git-hub-push-changes-to-repository-github-)
-  - [1.11 Change compact folder configuration in VSC  ↑](#111-change-compact-folder-configuration-in-vsc--)
-  - [1.12 Install Bootstrap ↑](#112-install-bootstrap-)
+  - [1.7 Angular extensions:](#17-angular-extensions)
+  - [1.8 Create a component use Angular CLI ↑](#18-create-a-component-use-angular-cli-)
+  - [1.9 Adding component ↑](#19-adding-component-)
+  - [1.10 Git Hub asociate repository to my Project ↑](#110-git-hub-asociate-repository-to-my-project-)
+  - [1.11 Git Hub push changes to repository GitHub ↑](#111-git-hub-push-changes-to-repository-github-)
+  - [1.12 Change compact folder configuration in VSC  ↑](#112-change-compact-folder-configuration-in-vsc--)
+  - [1.13 Install Bootstrap ↑](#113-install-bootstrap-)
   
 
 
@@ -22,8 +23,9 @@
 ## 1.0 ¿What it's Angular? [↑](#table-of-contents)
     - Created for Google
     - Framework JS for create SPA (Single Page Applications)
-    - TS (super set JS)
+    - TypeScript (super set JS)
     - MVC Model View Controler
+    - Architecture based in component
 
 ## 1.1 Install Angular [↑](#table-of-contents)
 1. Download and install VSC and open terminal in VSC: Terminal > New Terminal or CNTL + Ñ
@@ -191,23 +193,28 @@ Components are subdivide in:
         -  **```npm start nameProject  ```**
         -  **```npm run start nameProject ```**
 
-## 1.7 Create a component use Angular CLI [↑](#table-of-contents)
+## 1.7 Angular extensions:
+- **```Angular Snippets```** →  This extension adds snippets for Angular for TypeScript and HTML.
+- **```Bracket Pair Colorizer```** → This extension allows matching brackets to be identified with colours.
+- **```Auto Import```** → This extension automatically finds, parses and provides code actions and code completion for all available imports.
+
+## 1.8 Create a component use Angular CLI [↑](#table-of-contents)
 For create component use:
 1. Complete form:    **```ng generate component name-component ```**
 2. Abreviated form:  **```ng g        c         name-component ```**
 
-## 1.8 Adding component [↑](#table-of-contents)
+## 1.9 Adding component [↑](#table-of-contents)
 For call component in HTML file:
 1. Go to the selector atribute located in the file **```nameComponent.component.ts```** and copy the value
 2. Paste the selector in other component HTML **```<app-component-name></app-component-name>```**
 
-## 1.9 Git Hub asociate repository to my Project [↑](#table-of-contents)
+## 1.10 Git Hub asociate repository to my Project [↑](#table-of-contents)
 1. Go to gitHub page and create repository New > write RepositoryName (ex. workspace-angular) and push Create Repository
 2. **```git remote add origin URL```** URL example https://github.com/yourUserNameGit/yourRepositoryName.git
 3. **```git branch -M main```**
 4. **```git push -u origin main```**
 
-## 1.10 Git Hub push changes to repository GitHub [↑](#table-of-contents)
+## 1.11 Git Hub push changes to repository GitHub [↑](#table-of-contents)
 1. make changes in repository (Working Directory → WD)
 2. **```git status```** (for see the changes in WD)
 3. **```git add .```** (for add all changes of WD to Staging Area → SA) or **```git add file```** (for add only one file of WD to SA)
@@ -216,8 +223,66 @@ For call component in HTML file:
 6. **```git commit -m "description commit message"```** (for save SA files in Local Repository → LR)
 7. **```git push```** (for upload files to LR to Remote Repository RR) RR = GitHub Repository
 
-## 1.11 Change compact folder configuration in VSC  [↑](#table-of-contents)
+## 1.12 Change compact folder configuration in VSC  [↑](#table-of-contents)
 1. Go to File > Preferences > Features & Uncheck compact folders
 
-## 1.12 Install Bootstrap [↑](#table-of-contents)
-1. npm install bootstrap
+## 1.13 Install Bootstrap [↑](#table-of-contents)
+1. Install dependencies requerid for Bootstrap works correctly;
+     - **```npm install bootstrap```**
+     - **```npm install jquery```**
+     - **```npm install popper.js```**
+2. Go to the file angular.json and search depedendies boostrap, jquery, popper.js in node_modules and adding in styles and scripts the files:
+      ``` json
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "styles": [
+              "src/styles.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/popper.js/dist/umd/popper.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
+          },
+      ```
+3. For run jquery code **```npm i @types/jquery```** and go to the file **```tsconfig.app.json```** and adding in types of compilerOptions **```"jquery"```**
+      ``` json
+      /* To learn more about this file see: https://angular.io/config/tsconfig. */
+      {
+        "extends": "./tsconfig.json",
+        "compilerOptions": {
+          "outDir": "./out-tsc/app",
+          "types": ["jquery"]
+        },
+        "files": [
+          "src/main.ts",
+          "src/polyfills.ts"
+        ],
+        "include": [
+          "src/**/*.d.ts"
+        ]
+      }
+      ```
+4. Go to app.component.ts and add **```constructor(){$(() => { alert('ready!'); });}```**
+      ``` js
+      import { Component } from '@angular/core';
+
+      @Component({
+        selector: 'app-root',
+        templateUrl: './app.component.html',
+        styleUrls: ['./app.component.css']
+      })
+      export class AppComponent {
+        title = 'my-app';
+        constructor(){$(() => { alert('ready!'); });}
+      }
+      ```
+5. Add in template.component.html:
+      ``` html
+        <div class="alert alert-success" role="alert">
+          Testing template Bootstrap
+        </div>
+      ```
+6. Open the app and check alert (jQuery) appear in the browser and div have a format green
