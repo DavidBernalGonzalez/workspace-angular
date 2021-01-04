@@ -18,7 +18,8 @@
 - [2. Bindings with Angular ↑](#2-bindings-with-angular-)
   - [2.1 String Interpolation Moustached {{}} (Send data from Model to View) ↑](#21-string-interpolation-moustached--send-data-from-model-to-view-)
   - [2.2 Property Binding [property] (Send data from Model to View) ↑](#22-property-binding-property-send-data-from-model-to-view-)
-  - [2.3 Event Binding](#23-event-binding)
+  - [2.3 Event Binding (Send data from the View to the Model) ↑](#23-event-binding-send-data-from-the-view-to-the-model-)
+  - [2.4 Two way binding ↑](#24-two-way-binding-)
   
 
 
@@ -357,4 +358,29 @@ Other example more dinamic its adding a setTimeOut function change status in 300
     setTimeout(() => (this.isActive = !this.isActive), 3000);
   }
 ```
-## 2.3 Event Binding
+## 2.3 Event Binding (Send data from the View to the Model) [↑](#table-of-contents)
+  ``` html 
+  <button class="btn btn-primary" (click)="onClickBtn()">Greeting</button>
+  ```
+
+  ``` js 
+  onClickBtn(): void{
+    alert('Hello World');
+  }
+  ```
+
+With $event
+  ``` html 
+  <input (input)= "onInput($event)">
+  <p>{{inputData}}</p>
+  ```
+
+  ``` js 
+  inputData = '';
+  onInput(event: Event): void{
+    this.inputData = ((event.target as HTMLInputElement).value);
+    console.log(this.inputData);
+  }
+  ```
+
+## 2.4 Two way binding [↑](#table-of-contents)
