@@ -21,6 +21,9 @@
   - [2.3 Event Binding (Send data from the View to the Model) ↑](#23-event-binding-send-data-from-the-view-to-the-model-)
   - [2.4 Two way binding = Event Binding + Property Binding ↑](#24-two-way-binding--event-binding--property-binding-)
   - [2.5 Exercise create a calculator ↑](#25-exercise-create-a-calculator-)
+- [3. Directives Angular](#3-directives-angular)
+  - [3.1 *ngIf](#31-ngif)
+  - [3.2 Exercice calculator II](#32-exercice-calculator-ii)
   
 
 
@@ -454,11 +457,66 @@ component.ts:
   title = 'Mi calculadora';
   num1 = 0;
   num2 = 0;
-  result: number | string = '';
+  result = 0;
 
   onClick(): void{
     if (this.num1 === 0 && this.num2 === 0){
       alert('0 + 0 = 0');
+    }
+    this.result = this.num1 + this.num2;
+  }
+```
+# 3. Directives Angular
+## 3.1 *ngIf
+ngIf show or hidde the element if true condicion to evaluate it's true. Example:
+``` html
+<div *ngIf="greeting">
+  Hello
+</div>
+```
+If the greeting it's true the element is visible
+``` js
+greeting = true;
+```
+If the greeting it's true the element is hidden
+``` js
+greeting = false;
+```
+## 3.2 Exercice calculator II
+In the calculator exercise create a DIV containing the label of the label and the input of the result and hidden if the calculate button is pressed and the inputs not equals that 0
+``` html
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <h1>{{title}}</h1>
+        <div *ngIf="showResult">
+          <label for="result">Operation result:</label>
+          <input [value]="result" name="result" readonly="readonly">
+        </div>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <br>
+        <input type="number" [(ngModel)] = "num1" maxlength="10">
+        <input type="number" [(ngModel)] = "num2" maxlength="10">
+        <button (click)="onClick()">Add</button>
+      </div>
+  </div>
+</div>
+```
+``` js
+  title = 'Mi calculadora';
+  num1 = 0;
+  num2 = 0;
+  result = 0;
+  showResult = false;
+
+  onClick(): void{
+    if (this.num1 === 0 && this.num2 === 0){
+      alert('0 + 0 = 0');
+    } else{
+      this.showResult = true;
     }
     this.result = this.num1 + this.num2;
   }
